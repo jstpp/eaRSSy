@@ -5,7 +5,7 @@ import feedparser
 def get_context(rss_urls, app):
     context = {'channels': []}
     result = []
-    db = database.get_db(app)
+    db = app.db
     if(db):
         cursor = db.cursor(dictionary=True, buffered=True)
         cursor.execute(''' SELECT * FROM SUBSCRIPTIONS ''')

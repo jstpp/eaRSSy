@@ -21,6 +21,8 @@ small, span {
 }
 
 #earssy-header {
+    position: sticky;
+    top: -0.15vmax;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -29,8 +31,10 @@ small, span {
 .flow-container {
     padding: 0.5vmax 2vmax;
     background-color: #fde3c2;
-    border-radius: 1vmax;
+    border-radius: 0.3vmax;
     box-shadow: 0 0 0.5vmax 0.25vmax #a1907b;
+    margin-left: 5vw;
+    margin-right: 5vw;
 }
 #earssy-login form {
     width: 100%;
@@ -42,7 +46,7 @@ small, span {
 
 #earssy-login input {
     padding: 1vmax;
-    border-radius: 1vmax;
+    border-radius: 0.3vmax;
     border: none;
     width: 50%;
     box-shadow: 0 0 0.25vmax 0.12vmax #a1907b;
@@ -59,10 +63,10 @@ small, span {
     display: flex;
     gap: 1vmax;
     color: white;
-    background-color: #00044b;
-    box-shadow: 0 0 0.5vmax 0.25vmax #a1907b;
-    border-radius: 0.5vmax;
-    padding: 1vmax;
+    background: #00044b;
+    background: linear-gradient(90deg,rgba(0, 4, 75, 1) 12%, rgba(237, 221, 83, 0) 61%);
+    border-radius: 0.15vmax;
+    padding-left: 1vmax;
 }
 
 .earssy-content-card {
@@ -70,10 +74,11 @@ small, span {
     gap: 1vmax;
     background-color: #d0b899;
     box-shadow: 0 0 0.5vmax 0.25vmax #a1907b;
-    border-radius: 0.5vmax;
+    border-radius: 0.15vmax;
     padding: 1vmax;
     transition: 0.3s;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .earssy-content-card:hover {

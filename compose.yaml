@@ -7,13 +7,18 @@ services:
           MYSQL_DATABASE: earssy_db
           MYSQL_USER: earssy_db
           MYSQL_PASSWORD: earssy_db
+        healthcheck:
+          test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "earssy_db", "-pearssy_db"]
+          timeout: 3s
+          retries: 10
     web:
         build:
             dockerfile: ./setup/web-dockerfile
         ports:
           - '80:80'
         depends_on:
-          - mysql
+          mysql:
+            condition: service_healthy
         volumes:
           - ./app/:/earssy/
         environment:

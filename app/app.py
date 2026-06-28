@@ -3,6 +3,7 @@ import os
 
 import include.context as context
 import include.auth as auth
+import include.db as db
 
 app = Flask(__name__)
 
@@ -12,6 +13,7 @@ app.config['MYSQL_PASSWORD'] = 'earssy_db'
 app.config['MYSQL_DB'] = 'earssy_db'
 #app.secret_key = os.getenv("EARSSY_SECRET_KEY")
 app.secret_key = "oke92k30932k020e2e03e02ke0" # temporary
+app.db = db.get_db(app)
 
 
 rss_urls = ["https://feeds.bbci.co.uk/news/rss.xml",

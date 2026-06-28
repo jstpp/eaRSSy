@@ -3,7 +3,7 @@ from flask import Flask, session, current_app
 import mysql.connector, hashlib, os
 
 def create_account(app, username, password):
-    database = db.get_db(app)
+    database = app.db
     cursor = database.cursor(dictionary=True, buffered=True)
 
     cursor.execute(''' SELECT * FROM USERS WHERE username=%s AND password=%s ''', (username, hashlib.sha3_256(password.encode()).hexdigest()))
@@ -20,7 +20,7 @@ def user_auth(app, username, password):
     if(session.get('user')):
         return True
 
-    database = db.get_db(app)
+    database = app.db
     cursor = database.cursor(dictionary=True, buffered=True)
     
     cursor.execute(''' SELECT * FROM USERS''')
