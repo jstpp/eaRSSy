@@ -74,11 +74,14 @@ small, span {
     gap: 1vmax;
     background-color: #d0b899;
     box-shadow: 0 0 0.5vmax 0.25vmax #a1907b;
-    border-radius: 0.15vmax;
+    border-radius: 0.2vmax;
     padding: 1vmax;
     transition: 0.3s;
     cursor: pointer;
     overflow: hidden;
+    color: black;
+    text-decoration: none;
+    align-items: center;
 }
 
 .earssy-content-card:hover {
@@ -106,4 +109,9 @@ small, span {
         max-width: 100%;
         height: auto;
     }
+}
+
+.earssy-settings-RSS-channel:hover {
+    text-decoration: line-through;
+    color: red;
 }

@@ -26,5 +26,8 @@
             </a>
         {% endfor %}
     {% endfor %}
+    {% if (channels | length) == 0 %}
+        <center>Your list of RSS channels is empty:(</center>
+    {% endif %}
 </div>
 

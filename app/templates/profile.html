@@ -4,7 +4,7 @@
     <br />
     <br />
     <h2 style="margin: 0;">Profile</h2>
-    <p>Username: <b>{{ session['user']['username'] }}</b></p>
+    <p>Username: <b>{{ session['user']['username'] }}</b>&emsp;<a href="/logout">Log out</a></p>
     <br />
     <br />
     <h2 style="margin: 0;">RSS channels</h2>
@@ -13,10 +13,16 @@
     <br />
     <div style="display: flex; gap: 1vmax;">
         {% for channel in channels %}
-            <div class="earssy-content-card">
+            <a class="earssy-content-card earssy-settings-RSS-channel" href='/delete-channel?id={{ channel["SUBSCRIPTION_ID"] }}' id='earssy-channel-{{ channel["feed"]["SUBSCRIPTION_ID"] }}'>
                 {{ channel['feed']['title'] }}
-            </div>
+            </a>
         {% endfor %}
+        <a class="earssy-content-card">
+            <form id="earssy-settings-addchannel" action="/add-channel" method="GET" style="display: flex; align-items: center; margin: 0; gap: 0.5vmax;">
+                <input type="text" name="url" id="earssy-settings-addchannel-url" />
+                <i class="fa fa-plus-circle" onClick="document.getElementById('earssy-settings-addchannel').submit();"></i>
+            </form>
+        </a>
     </div>
     <br />
     <br />

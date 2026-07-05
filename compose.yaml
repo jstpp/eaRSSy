@@ -9,8 +9,8 @@ services:
           MYSQL_PASSWORD: earssy_db
         healthcheck:
           test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "earssy_db", "-pearssy_db"]
-          timeout: 3s
-          retries: 10
+          timeout: 1s
+          retries: 5
     web:
         build:
             dockerfile: ./setup/web-dockerfile
