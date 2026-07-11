@@ -11,8 +11,7 @@ app.config['MYSQL_HOST'] = 'mysql'
 app.config['MYSQL_USER'] = 'earssy_db'
 app.config['MYSQL_PASSWORD'] = 'earssy_db'
 app.config['MYSQL_DB'] = 'earssy_db'
-#app.secret_key = os.getenv("EARSSY_SECRET_KEY")
-app.secret_key = "oke92k30932k020e2e03e02ke0" # temporary
+app.secret_key = os.getenv("EARSSY_SECRET_KEY")
 app.db = db.get_db(app)
 
 app.ctx = context.get_context(app)
